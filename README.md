@@ -3,15 +3,20 @@ Experimental Arduino firmware made in V. This is a proof of concept for making
 an AVR firmware using V.
 
 This repo contains a simple example of a led blinking using an Arduino Uno
-as a demo (Atmel AT368p) with the Atmel/Microchip avr libs.
+as a base platform (based on Atmel AT368p) with the Atmel/Microchip avr libs.
 
 ## Build
 
-Using Docker with the provided Dockerfile:
+Dependencies:
+```
+gcc-avr binutils-avr avr-libc avrdude v
+```
+
+Using Docker with the provided Dockerfile (contains GCC AVR and V):
 ```bash
 docker build -f Dockerfile -t vavr:latest .
 # Spawn a shell
-docker run -it --volume=$(pwd):/opt/rpi --workdir=/opt/rpi --rm vavr
+docker run -it --volume=$(pwd):/opt/vavr --workdir=/opt/vavr --rm vavr
 # Build the firmware
 ./building.sh
 ```
