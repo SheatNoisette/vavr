@@ -18,7 +18,7 @@ docker build -f Dockerfile -t vavr:latest .
 # Spawn a shell
 docker run -it --volume=$(pwd):/opt/vavr --workdir=/opt/vavr --rm vavr
 # Build the firmware
-./building.sh
+make
 ```
 
 You can then upload the program to a real Arduino Uno using AVR dude:

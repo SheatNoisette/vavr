@@ -6,6 +6,10 @@ module main
 
 #define voidptr void*
 #define u32 int
+#define u16 short
+#define i16 unsigned short
+#define u8 unsigned char
+#define i8 char
 
 #include <avr/io.h>
 #include <util/delay.h>
