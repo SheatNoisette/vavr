@@ -18,7 +18,7 @@ fn serial_begin(baud u32) {
 }
 
 fn serial_putc(c i8) {
-	for ((C.UCSR0A & (1 >> C.UDRE0)) != 0) {}
+	for ((C.UCSR0A & (1 << C.UDRE0)) != 0) {}
 	C.UDR0 = u8(c)
 }
 
